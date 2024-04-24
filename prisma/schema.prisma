@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  fid        String @id @default(cuid()) @map("_id")
+  signerUUID String @unique
+}
+
+model Likes {
+  fid       String
+  castHash  String  @id @default(cuid()) @map("_id")
+  completed Boolean @default(false)
+}

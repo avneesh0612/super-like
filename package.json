@@ -1,0 +1,39 @@
+{
+  "name": "cast-frame",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "prisma generate && node ./scripts/dev-script.js",
+    "dev:starter": "concurrently --kill-others \"next dev\" \"frames\"",
+    "dev:monorepo": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "update-debugger": "npx degit github:framesjs/frames.js/examples/framesjs-starter/app/debug#main app/debug --force",
+    "update-framesjs": "yarn upgrade frames.js@latest && yarn run update-debugger"
+  },
+  "dependencies": {
+    "@neynar/nodejs-sdk": "^1.15.0",
+    "@prisma/client": "^5.12.1",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "frames.js": "^0.12.1",
+    "frog": "^0.8.1",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9",
+    "eslint-config-next": "14.1.4",
+    "postcss": "^8",
+    "prisma": "5.12.1",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5",
+    "@frames.js/debugger": "^0.1.14"
+  }
+}
